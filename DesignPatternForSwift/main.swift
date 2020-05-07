@@ -7,5 +7,10 @@
 //
 
 import Foundation
+//withUnsafePointer<T, Result>(to value: T, _ body: (UnsafePointer<T>) throws -> Result) rethrows -> Result
+func address<T>(o: T) -> String {
+    withUnsafePointer(to: o) { "\($0)" }
+}
 
 StrategyPattern.test()
+ObserverPattern.test()
