@@ -11,3 +11,4 @@ import Foundation
 StrategyPattern.test()
 ObserverPattern.test()
 DecoratorPattern.test()
+FactoryPattern.test()
