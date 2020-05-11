@@ -24,17 +24,10 @@
 
 装饰者模式的角色：
 
-**Component（抽象构件）**
-Component是具体构件和抽象装饰类的共同父类，声明了在具体构件中实现的业务方法。
-
-**ConcreteComponent（具体构件）**
-它是Component的子类，实现了在抽象构件中声明的方法，是我们将要动态地加上新行为的对象。
-
-**Decorator（抽象装饰类）**
-它也是Component的子类，用于给ConcreteComponent增加职责，但是具体职责在其子类（ConcreteDecorator）中实现，另外它维护一个指向Component的引用，通过该引用可以调用ConcreteComponent的方法，并通过其子类扩展该方法，以达到装饰的目的。
-
-**ConcreteDecorator（具体装饰类）**
-它是Decorator的子类，负责向构件添加新的职责。新职责是通过在旧行为前面或后面做一些计算来添加的。
++ **Component（抽象构件）**：Component是具体构件和抽象装饰类的共同父类，声明了在具体构件中实现的业务方法。
++ **ConcreteComponent（具体构件）**：它是Component的子类，实现了在抽象构件中声明的方法，是我们将要动态地加上新行为的对象。
++ **Decorator（抽象装饰类）**：它也是Component的子类，用于给ConcreteComponent增加职责，但是具体职责在其子类（ConcreteDecorator）中实现，另外它维护一个指向Component的引用，通过该引用可以调用ConcreteComponent的方法，并通过其子类扩展该方法，以达到装饰的目的。
++ **ConcreteDecorator（具体装饰类）**：它是Decorator的子类，负责向构件添加新的职责。新职责是通过在旧行为前面或后面做一些计算来添加的。
 
 ![装饰者模式](./resources/装饰者模式.png)
 
