@@ -29,7 +29,7 @@
 + **Decorator（抽象装饰类）**：它也是Component的子类，用于给ConcreteComponent增加职责，但是具体职责在其子类（ConcreteDecorator）中实现，另外它维护一个指向Component的引用，通过该引用可以调用ConcreteComponent的方法，并通过其子类扩展该方法，以达到装饰的目的。
 + **ConcreteDecorator（具体装饰类）**：它是Decorator的子类，负责向构件添加新的职责。新职责是通过在旧行为前面或后面做一些计算来添加的。
 
-![装饰者模式](./resources/装饰者模式.png)
+![装饰者模式](./resources/装饰器模式.png)
 
 举例
 
