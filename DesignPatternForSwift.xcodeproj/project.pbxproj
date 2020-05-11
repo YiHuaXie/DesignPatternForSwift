@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE09656C24699A72001A4B0D /* Beverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE09656B24699A72001A4B0D /* Beverage.swift */; };
+		AE09656E2469B3B9001A4B0D /* DecoratorPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE09656D2469B3B9001A4B0D /* DecoratorPattern.swift */; };
 		AEE932AF246460F3006B420C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE932AE246460F3006B420C /* main.swift */; };
 		AEE932B724646314006B420C /* StrategyPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE932B624646314006B420C /* StrategyPattern.swift */; };
 		AEE932B92464634B006B420C /* Duck.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE932B82464634B006B420C /* Duck.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AE09656B24699A72001A4B0D /* Beverage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beverage.swift; sourceTree = "<group>"; };
+		AE09656D2469B3B9001A4B0D /* DecoratorPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoratorPattern.swift; sourceTree = "<group>"; };
 		AEE932AB246460F3006B420C /* DesignPatternForSwift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DesignPatternForSwift; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEE932AE246460F3006B420C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AEE932B624646314006B420C /* StrategyPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyPattern.swift; sourceTree = "<group>"; };
@@ -65,9 +69,10 @@
 		AEE932AD246460F3006B420C /* DesignPatternForSwift */ = {
 			isa = PBXGroup;
 			children = (
-				AEE932BA2464A9AD006B420C /* 2.观察者模式 */,
 				AEE932B5246462C1006B420C /* 1.策略模式 */,
+				AEE932BA2464A9AD006B420C /* 2.观察者模式 */,
 				AEE932AE246460F3006B420C /* main.swift */,
+				AEE932BF2464C7E2006B420C /* 3.装饰者模式 */,
 			);
 			path = DesignPatternForSwift;
 			sourceTree = "<group>";
@@ -88,6 +93,15 @@
 				AEE932BD2464B542006B420C /* ObserverPattern.swift */,
 			);
 			path = "2.观察者模式";
+			sourceTree = "<group>";
+		};
+		AEE932BF2464C7E2006B420C /* 3.装饰者模式 */ = {
+			isa = PBXGroup;
+			children = (
+				AE09656B24699A72001A4B0D /* Beverage.swift */,
+				AE09656D2469B3B9001A4B0D /* DecoratorPattern.swift */,
+			);
+			path = "3.装饰者模式";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,11 +162,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE09656E2469B3B9001A4B0D /* DecoratorPattern.swift in Sources */,
 				AEE932B724646314006B420C /* StrategyPattern.swift in Sources */,
 				AEE932AF246460F3006B420C /* main.swift in Sources */,
 				AEE932BC2464A9E4006B420C /* WeatherData.swift in Sources */,
 				AEE932B92464634B006B420C /* Duck.swift in Sources */,
 				AEE932BE2464B542006B420C /* ObserverPattern.swift in Sources */,
+				AE09656C24699A72001A4B0D /* Beverage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
