@@ -36,7 +36,7 @@ Component是具体构件和抽象装饰类的共同父类，声明了在具体�
 **ConcreteDecorator（具体装饰类）**
 它是Decorator的子类，负责向构件添加新的职责。新职责是通过在旧行为前面或后面做一些计算来添加的。
 
-![装饰者模式](./resources/装饰者模式.png)
+![装饰者模式](./resources/装饰器模式.png)
 
 举例
 
