@@ -62,3 +62,24 @@ debugPrint("\(beverage2.getDescription()), $\(beverage2.cost())" )
 
 知道工厂方法的角色后，简单工厂就容易理解了，就是一个ConcreteCreator持有一个简单工厂，简单工厂知道如何创建具体产品。简单工厂并不是一个设计模式，像是一种编程习惯。
 
+### 抽象工厂
+
+抽象工厂提供一个接口，用于创建相关或依赖的家族，而不需要确定指定具体类。抽象工厂允许客户使用抽象的接口来创建一组相关的产品，而不需要知道实际产出的具体产品是什么，因此抽象是对产品的抽象。
+
+![抽象工厂模式](./resources/抽象工厂模式.png)
+
+书中关于工厂方法和抽象工厂的区别
+
++ 在工厂方法中，创建者（`PizzaStore`）提供一个抽象接口来创建“一个产品“，由子类（`ChicagoPizzaStore`或`NYPizzaStore`）决定实例化哪个具体产品。
++ 在抽象工厂中，提供一个抽象接口（`PizzaIngredientFactory`）来创建一个产品家族，这些负责在抽象工厂中建立产品的方法通常是以工厂方法来实现的。每个具体子类（`NYPizzaIngredientFactory`或`ChicagoPizzaIngredientFactory`）都创建一个家族的产品。
+
+自己关于工厂方法和抽象工厂的理解：
+
++ 工厂方法只能抽象出一个产品类，该产品类可以派生出多个具体产品类，该产品类就是`Pizza`，`NYStyleCheesePizza`和`ChicagoStyleCheesePizza`为具体产品类。抽象工厂有多个抽象产品类，每个抽象产品类可以派生出多个具体产品类，`CheesePizza`、`VeggiePizza`、`ClamPizza`均为抽象产品类。
++ 工厂方法的具体工厂类只能创建一个具体产品类的实例，`NYStylePizzaStore`创建cheese类产品只能是`NYStyleCheesePizza`。抽象工厂的具体工厂类可以创建多个具体产品类的实例，`NYPizzaStore`创建cheese类产品可以根据`PizzaIngredientFactory`的不同创建出不同的`CheesePizza`。
+
+
+
+
+
+
