@@ -51,10 +51,10 @@ debugPrint("\(beverage2.getDescription()), $\(beverage2.cost())" )
 
 工厂方法的角色：
 
-1. **Creator（创建者）**：Creator是一个抽象类，它实现了所有操纵产品的方法，但是不实现工厂方法。工厂方法又子类实现。
-2. **ConcreteCreator（具体创建者）**：它是Creator的子类，实现了工厂方法。ConcreteCreator负责创建一个或多个具体产品，只有它知道如何创建具体产品
-3. **Product（产品）**：Product是一个类或者抽象类，用来声明产品的共同接口。
-4. **ConcreteProject（具体产品）**：实际制造出的产品
++ **Creator（创建者）**：Creator是一个抽象类，它实现了所有操纵产品的方法，但是不实现工厂方法。工厂方法又子类实现。
++ **ConcreteCreator（具体创建者）**：它是Creator的子类，实现了工厂方法。ConcreteCreator负责创建一个或多个具体产品，只有它知道如何创建具体产品
++ **Product（产品）**：Product是一个类或者抽象类，用来声明产品的共同接口。
++ **ConcreteProject（具体产品）**：实际制造出的产品
 
 ![工厂方法模式](./resources/工厂方法模式.png)
 
@@ -77,6 +77,62 @@ debugPrint("\(beverage2.getDescription()), $\(beverage2.cost())" )
 
 + 工厂方法只能抽象出一个产品类，该产品类可以派生出多个具体产品类，该产品类就是`Pizza`，`NYStyleCheesePizza`和`ChicagoStyleCheesePizza`为具体产品类。抽象工厂有多个抽象产品类，每个抽象产品类可以派生出多个具体产品类，`CheesePizza`、`VeggiePizza`、`ClamPizza`均为抽象产品类。
 + 工厂方法的具体工厂类只能创建一个具体产品类的实例，`NYStylePizzaStore`创建cheese类产品只能是`NYStyleCheesePizza`。抽象工厂的具体工厂类可以创建多个具体产品类的实例，`NYPizzaStore`创建cheese类产品可以根据`PizzaIngredientFactory`的不同创建出不同的`CheesePizza`。
+
+## 命令模式
+
+命令模式将请求封装成对象，以便使用不同的请求、队列或者日志来参数化其他对象。命令模式可以支持可撤销的操作。
+
+命令模式的角色：
+
++ **Client**：负责创建一个ConcreteCommand，并设置它的接受者。
++ **Invoker**：调用者持有一个命令对象，并在某个时间点调用命令对象的`execute()`方法，执行请求。
++ **Command**：为所有命令声明一个接口，调用命令对象的`execute()`方法，就可以让接收者进行相关的动作。
++ **ConcreteCommand**：定义了动作和接收者之间的绑定关系。调用者只要调用`execute()`方法就可以发出请求，然后由ConcreteCommand调用接收者的一个或多个动作。`execute()`方法会调用接收者的动作，以满足请求。
++ **Receiver**：接收者知道如何进行必要的工作，实现这个请求。任何类都可以当接收者。
+
+![命令模式](./resources/命令模式.png)
+
+举例
+
+```Swift
+// Invoker角色
+let remoteControl = RemoteControl()
+
+// Receiver角色
+let light = Light(location: "Living Room")
+let tv = TV(location: "Living Room")
+let stereo = Stereo(location: "Living Room")
+let hottub = Hottub()
+
+// ConcreteCommand角色
+let lightOn = LightOnCommand(light: light)
+let stereoOn = StereoOnCommand(stereo: stereo)
+let tvOn = TVOnCommand(tv: tv)
+let hottubOn = HottubOnCommand(hottub: hottub)
+
+let lightOff = LightOffCommand(light: light)
+let stereoOff = StereoOffCommand(stereo: stereo)
+let tvOff = TVOffCommand(tv: tv)
+let hottubOff = HottubOffCommand(hottub: hottub)
+
+let partyOn: [Command] = [lightOn, stereoOn, tvOn, hottubOn]
+let partyOff: [Command] = [lightOff, stereoOff, tvOff, hottubOff]
+
+let partyOnMacro = MacroCommand(commands: partyOn)
+let partyOffMacro = MacroCommand(commands: partyOff)
+
+// remoteControl持有上面的命令对象
+remoteControl.setCommand(slot: 0, onCommand: partyOnMacro, offCommand: partyOffMacro)
+
+print("--- Pushing Macro On ---")
+// 调用onButtonWasPushed方法使得该命令的execute方法执行
+remoteControl.onButtonWasPushed(slot: 0)
+print("--- Pushing Macro Off ---")
+remoteControl.offButtonWasPushed(slot: 0)
+print("--- Pushing Macro Undo ---")
+remoteControl.undoButtonWasPushed()
+```
+
 
 
 
