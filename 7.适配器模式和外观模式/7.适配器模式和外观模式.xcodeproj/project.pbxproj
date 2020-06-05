@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AED8F39A2487B0BF002BD455 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED8F3992487B0BF002BD455 /* main.swift */; };
+		AED8F3A2248A280E002BD455 /* Duck.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED8F3A1248A280E002BD455 /* Duck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		AED8F3962487B0BF002BD455 /* 7.适配器模式和外观模式 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "7.适配器模式和外观模式"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED8F3992487B0BF002BD455 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AED8F3A1248A280E002BD455 /* Duck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +59,18 @@
 		AED8F3982487B0BF002BD455 /* 7.适配器模式和外观模式 */ = {
 			isa = PBXGroup;
 			children = (
+				AED8F3A0248A27FA002BD455 /* Ducks */,
 				AED8F3992487B0BF002BD455 /* main.swift */,
 			);
 			path = "7.适配器模式和外观模式";
+			sourceTree = "<group>";
+		};
+		AED8F3A0248A27FA002BD455 /* Ducks */ = {
+			isa = PBXGroup;
+			children = (
+				AED8F3A1248A280E002BD455 /* Duck.swift */,
+			);
+			path = Ducks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +131,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AED8F3A2248A280E002BD455 /* Duck.swift in Sources */,
 				AED8F39A2487B0BF002BD455 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
