@@ -139,7 +139,6 @@ remoteControl.undoButtonWasPushed()
 
 ![适配器模式](./resources/适配器模式.png)
 
-## 外观模式
 
 
 
